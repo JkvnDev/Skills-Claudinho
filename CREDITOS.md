@@ -1,0 +1,54 @@
+# Créditos
+
+| Skill | Categoria | Projeto de origem | Licença |
+|---|---|---|---|
+| `carrier-relationship-management` | logistica | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `customs-trade-compliance` | logistica | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `inventory-demand-planning` | logistica | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `logistics-exception-management` | logistica | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `production-scheduling` | logistica | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `quality-nonconformance` | logistica | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `returns-reverse-logistics` | logistica | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `brainstorming` | metodo-e-produtividade | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `writing-plans` | metodo-e-produtividade | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `executing-plans` | metodo-e-produtividade | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `verification-before-completion` | metodo-e-produtividade | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `systematic-debugging` | metodo-e-produtividade | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `dispatching-parallel-agents` | metodo-e-produtividade | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `writing-skills` | metodo-e-produtividade | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `deep-research` | metodo-e-produtividade | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `market-research` | metodo-e-produtividade | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `search-first` | metodo-e-produtividade | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `humanizer` | escrita-e-comunicacao | [humanizer](https://github.com/blader/humanizer) | MIT |
+| `article-writing` | escrita-e-comunicacao | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `content-research-writer` | escrita-e-comunicacao | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 |
+| `internal-comms` | escrita-e-comunicacao | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 |
+| `meeting-insights-analyzer` | escrita-e-comunicacao | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 |
+| `tailored-resume-generator` | escrita-e-comunicacao | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 |
+| `frontend-slides` | apresentacoes-e-design | [frontend-slides](https://github.com/zarazhangrui/frontend-slides) | MIT |
+| `emil-design-eng` | apresentacoes-e-design | [emil-kowalski/skills](https://github.com/emilkowalski/skills) | MIT |
+| `apple-design` | apresentacoes-e-design | [emil-kowalski/skills](https://github.com/emilkowalski/skills) | MIT |
+| `design-taste-frontend` | apresentacoes-e-design | [taste-skill](https://github.com/Leonxlnx/taste-skill) | MIT |
+| `minimalist-ui` | apresentacoes-e-design | [taste-skill](https://github.com/Leonxlnx/taste-skill) | MIT |
+| `high-end-visual-design` | apresentacoes-e-design | [taste-skill](https://github.com/Leonxlnx/taste-skill) | MIT |
+| `redesign-existing-projects` | apresentacoes-e-design | [taste-skill](https://github.com/Leonxlnx/taste-skill) | MIT |
+| `ui-ux-pro-max` | apresentacoes-e-design | [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | MIT |
+| `ckm:design-system` | apresentacoes-e-design | [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | MIT |
+| `ckm:slides` | apresentacoes-e-design | [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | MIT |
+| `ckm:brand` | apresentacoes-e-design | [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | MIT |
+| `test-driven-development` | desenvolvimento | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `subagent-driven-development` | desenvolvimento | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `using-git-worktrees` | desenvolvimento | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `requesting-code-review` | desenvolvimento | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `receiving-code-review` | desenvolvimento | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `finishing-a-development-branch` | desenvolvimento | [superpowers](https://github.com/obra/superpowers) | MIT |
+| `mcp-builder` | desenvolvimento | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 |
+| `skill-creator` | desenvolvimento | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 |
+| `python-patterns` | desenvolvimento | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `frontend-patterns` | desenvolvimento | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `api-design` | desenvolvimento | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `postgres-patterns` | desenvolvimento | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `docker-patterns` | desenvolvimento | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `security-review` | desenvolvimento | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
+| `file-organizer` | organizacao | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 |
+| `invoice-organizer` | organizacao | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 |
