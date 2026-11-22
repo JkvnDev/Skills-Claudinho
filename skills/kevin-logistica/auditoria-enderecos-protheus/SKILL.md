@@ -37,7 +37,15 @@ Peça à TI para incluir a descrição do produto (B1_DESC) na extração do SBF
    - sem origem no período → "rastrear" (resolve com a carga histórica de SDB).
 7. **Atenção:** sinalize quando lote ou código do produto mudou na transferência.
 8. **Prioridade:** idade acima de 7 dias = **AGIR HOJE**; o resto = conferir. Agrupe por frente (chão, operador, produção, rastrear).
-9. **Higiene:** ignore movimentos com data posterior à data do plano (data digitada errada) e avise; avise se o SDB não cobre D-1.
+9. **Higiene:** ignore movimentos com data posterior à data do plano (data digitada errada) e avise; avise se o SDB não cobre D-1 **em dias úteis** (na segunda-feira, domingo sem movimento não é falta; feriado precisa de calendário).
+10. **Prazo por tipo de endereço:** passagem (ex.: A ENDERECAR), trânsito e demais endereços têm prazos próprios e configuráveis. Não reaproveite o prazo de um tipo para outro sem querer.
+11. **Frente pela regra, não pelo texto:** defina a frente (chão, operador, produção, rastrear) no mesmo ponto em que define a ação. Deduzir a frente do texto da ação quebra quando alguém muda a redação.
+
+### Comparar com o dia anterior (backlog)
+- Anexe, de forma opcional, o CSV do plano anterior, que a própria ferramenta baixa. Chave = endereço + produto + lote, **tolerante ao Excel** (sem zeros à esquerda, em maiúsculas), porque alguém sempre abre e salva o CSV.
+- Cada linha sai como **NOVO** ou **CONTINUA desde dd/mm**. O que estava no plano anterior e sumiu vai para **Resolvidos**: conferir se a baixa foi física.
+- Novos × resolvidos por dia = **KPI de backlog**. É o indicador que leva o tema à gerência.
+- **Visão de gestão separada da folha da operação:** situação, comparativo e resolvidos aparecem na tela e no CSV. Na impressão, só saem se forem marcados. A folha da operação continua enxuta.
 
 ## Parte 2: monitor de resíduos (SD3)
 1. Pegue todo movimento que **entra ou sai** dos armazéns monitorados (e toda saída do armazém de sobra de produção).
@@ -52,19 +60,34 @@ Peça à TI para incluir a descrição do produto (B1_DESC) na extração do SBF
 | Ajuste manual | TMs de acerto de inventário/ajuste: sempre revisar |
 | **Sem regra** | Nenhuma regra cobre: separar para o dono decidir. Caminho novo aparece aqui no primeiro dia |
 
-4. Requisições de consumo de OP sem par (RE1/RE2/RE5) = consumo, devido.
+   - **As regras de fluxo valem só para pares com TM de transferência** (ex.: 999/499). Um par com TM de exceção é **ajuste manual**. Um par com qualquer outro TM é **sem regra**, com o TM na descrição.
+   - **As regras ficam num bloco de configuração** no topo da ferramenta, separado da lógica. Assim, incluir um fluxo novo não mexe no motor.
+4. Requisições de consumo de OP sem par (RE1/RE2/RE5) = consumo, devido. **Exceção:** consumo saindo de um armazém de **não conforme** ou de **divergência** vira "validar com evidência". Material bloqueado não pode virar consumo sem rastro. Antes de ligar essa trava, levante o histórico: se for raro, ela não gera ruído e só pega o caso real.
 5. Mostre o **usuário**, o custo e o documento em cada linha; resuma os principais usuários e o custo a validar.
-6. **Frequência:** uma vez por dia, no início do expediente, olhando 24 h (D-1). Duas vezes por dia só em inventário ou congelamento.
+6. **Frequência:** uma vez por dia, no início do expediente, olhando 24 h (D-1). Duas vezes por dia só em inventário ou congelamento. Avise quando a SD3 não cobre o último dia útil.
+7. **Pendências que voltam:** anexe, de forma opcional, o CSV do monitor anterior com a coluna "Validado?" preenchida (S, X ou OK).
+   - O que não foi validado volta como **PENDENTE**, trazendo a evidência que já foi anotada, e fica no topo do grupo.
+   - O que já foi validado e reaparece num arquivo de vários dias sai da lista.
+   - Chave: data + de + para + TM + produto + lote + documento, tolerante ao Excel.
 
 ## Validar o método antes de confiar
 - **Reconstrução regressiva:** SBF de hoje menos os movimentos SDB posteriores deve reproduzir uma foto anterior conhecida. Meta: praticamente 100% das chaves batendo.
 - **Backtest:** gere o plano numa data passada e veja o que se resolveu sozinho depois. Linhas antigas (> 7 dias) quase nunca se resolvem sem ação, e é isso que justifica o corte de prioridade.
+- **Regressão a cada versão:** rode a ferramenta antiga e a nova com os mesmos arquivos de referência. As linhas precisam sair idênticas, a menos que a mudança seja intencional; nesse caso, explique cada diferença. Funções novas se testam com um arquivo sintético que tenha um caso por regra.
+  - Sem Node nem Python, o Edge headless resolve: `msedge --headless=new --allow-file-access-from-files --virtual-time-budget=120000 --dump-dom pagina.html`. Use um script injetado que lê os arquivos por XHR e grava o resultado num atributo do body. A leitura às vezes termina antes do processamento; nesse caso, repita.
+  - Arquivo grande demais para o navegador: leia em fluxo fora dele (XmlReader em C# via `Add-Type` lê 1 GB de XML de planilha em poucos minutos).
 - Durante congelamentos, procure jobs automáticos de integração que movimentam saldo sozinhos (muitos TMs idênticos, mesmo prefixo de documento). Peça à TI para pausá-los no inventário.
 
 ## Entrega para a operação
 - **Uma folha só, uma linha por item:** prioridade · está aqui · veio daqui · o que fazer · Feito?. Nada de abas de bastidores, legendas longas ou cruzamentos extras: a análise fica com quem montou.
 - A4 paisagem, cabeçalho com a data e as fontes, linha de assinatura, uma frente por página se ajudar a distribuir.
-- Ferramenta preferida: **HTML local** que lê os .xlsx no próprio navegador (ZIP + `DecompressionStream('deflate-raw')`), com botões Gerar · Imprimir · Baixar CSV. Os dados não saem do computador.
+- **Responsável no cabeçalho** de cada frente ou grupo (campo salvo no navegador, com espaço em branco quando vazio). Folha sem dono não tem quem cobrar.
+- Plano sem linhas imprime uma folha **"Nada a fazer"** com a contagem do que está no prazo. Nunca deixe a página em branco.
+- Ferramenta preferida: **HTML local** que lê os .xlsx no próprio navegador (ZIP + `DecompressionStream('deflate-raw')`), com botões Gerar · Imprimir · Baixar CSV. Os dados não saem do computador. Cada HTML é autossuficiente (leitor e logo embutidos), porque é enviado sozinho por e-mail.
+- **Robustez de arquivo:**
+  - Identifique o formato pelos bytes, não pela extensão. `D0 CF 11 E0` = .xls antigo; um .xls que começa com `<` é HTML. Nos dois casos, oriente a salvar como .xlsx.
+  - Um .xlsx de mais de ~80 MB descompacta para mais de 1 GB de XML e derruba o navegador. Recuse com uma mensagem e peça CSV ou um período menor.
+  - Em CSV pt-BR, "1.500" sem vírgula é milhar (1500), não 1,5.
 
 ## Regras
 - Dados de estoque, clientes e NF são da empresa: **não publicar** em serviços externos, repositórios ou páginas públicas.
