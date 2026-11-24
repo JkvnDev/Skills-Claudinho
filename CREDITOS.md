@@ -52,3 +52,9 @@
 | `security-review` | desenvolvimento | [everything-claude-code](https://github.com/affaan-m/everything-claude-code) | MIT |
 | `file-organizer` | organizacao | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 |
 | `invoice-organizer` | organizacao | [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 |
+| `chrome-devtools` | navegador-e-qa | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Apache-2.0 |
+| `chrome-devtools-troubleshooting` | navegador-e-qa | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Apache-2.0 |
+| `cookie-debugging` | navegador-e-qa | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Apache-2.0 |
+| `debug-optimize-lcp` | navegador-e-qa | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Apache-2.0 |
+| `a11y-debugging` | navegador-e-qa | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Apache-2.0 |
+| `open-code-review-delegate` | desenvolvimento | [open-code-review](https://github.com/alibaba/open-code-review) | Apache-2.0 |

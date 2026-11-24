@@ -4,6 +4,7 @@ Biblioteca pessoal de skills do Kevin para Claude (Claude.ai, Claude Code) e age
 
 - **6 skills próprias** em PT-BR, focadas na logística da operação.
 - **50 skills selecionadas** dos 10 pacotes originais, organizadas por categoria.
+- **6 skills de ferramentas externas** (Chrome DevTools MCP e Open Code Review) — avaliação em [docs/radar-github-2026-11.md](docs/radar-github-2026-11.md).
 - **Catálogo completo** de ~1.000 skills dos pacotes: [CATALOGO-COMPLETO.md](CATALOGO-COMPLETO.md).
 - Os zips originais estão preservados em `arquivo/zips/`.
 
@@ -17,9 +18,12 @@ skills/
   escrita-e-comunicacao/
   apresentacoes-e-design/
   desenvolvimento/
+  navegador-e-qa/         # Chrome DevTools MCP
   organizacao/
 arquivo/zips/             # pacotes originais
 scripts/instalar.sh       # copia as skills para ~/.claude/skills
+config/mcp/               # configs de servidores MCP (Claude Code e VS Code)
+docs/                     # avaliações de ferramentas (radar)
 ```
 
 ## Como usar
@@ -123,6 +127,19 @@ cd Skills-Claudinho
 | [`postgres-patterns`](skills/desenvolvimento/postgres-patterns/SKILL.md) | everything-claude-code | PostgreSQL database patterns for query optimization, schema design, indexing, and security. Based on Supabase best practices. |
 | [`docker-patterns`](skills/desenvolvimento/docker-patterns/SKILL.md) | everything-claude-code | Docker and Docker Compose patterns for local development, container security, networking, volume strategies, and multi-service orchestration. |
 | [`security-review`](skills/desenvolvimento/security-review/SKILL.md) | everything-claude-code | Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features. Provid… |
+| [`open-code-review-delegate`](skills/desenvolvimento/open-code-review-delegate/SKILL.md) | open-code-review (Alibaba) | Code review linha a linha usando o próprio Claude (sem chave de API extra). Requer o CLI `ocr`. |
+
+### Navegador e QA (Chrome DevTools MCP)
+
+Requer o servidor MCP configurado: `./config/mcp/claude-code.sh` (Claude Code) ou `config/mcp/vscode-mcp.json` (VS Code). Detalhes e cuidados em [docs/radar-github-2026-11.md](docs/radar-github-2026-11.md).
+
+| Skill | Origem | Quando usar |
+|---|---|---|
+| [`chrome-devtools`](skills/navegador-e-qa/chrome-devtools/SKILL.md) | chrome-devtools-mcp | Agente controlando um Chrome real: navegar, clicar, preencher, ler console e rede, screenshot, performance. |
+| [`chrome-devtools-troubleshooting`](skills/navegador-e-qa/chrome-devtools-troubleshooting/SKILL.md) | chrome-devtools-mcp | Quando o MCP não inicia ou `list_pages`/`navigate_page` falham. |
+| [`cookie-debugging`](skills/navegador-e-qa/cookie-debugging/SKILL.md) | chrome-devtools-mcp | Erros 401/403, login que cai, sessão expirando, cookies. |
+| [`debug-optimize-lcp`](skills/navegador-e-qa/debug-optimize-lcp/SKILL.md) | chrome-devtools-mcp | Página lenta para carregar (LCP / Core Web Vitals). |
+| [`a11y-debugging`](skills/navegador-e-qa/a11y-debugging/SKILL.md) | chrome-devtools-mcp | Acessibilidade: contraste, foco, teclado, alvos de toque. |
 
 ### Organização
 
